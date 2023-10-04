@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 
 int main()
@@ -6,49 +6,38 @@ int main()
 	int t;
 	int n;
 	cin >> t;
-	cin >> n;
+	int e;
     int** wo = new int*[t];
     for (int i = 0; i < t; i++) {
-		wo[i] = new int[n];
-			
-	}
-
-	int e;
-	for (int i = 0; i < t; i++) {
-		for (int j = 0; j < n; j++) {
-			for (e = 0; e < n; e++) {
-				cin >> e;
-				wo[i][j] = e;
-			}
-		}
-	}
-	for (int i = 0; i < t; i++) {
-		for (int j = 0; j < n; j++) {
-				cout<<wo[i][j]<<" ";
+		cin >> n;
+		wo[i] = new int[n];		
+		for (int l = 0; l < n; l++) {
+			cin >> e;
+			wo[i][l] = e;
 		}
 	}
 
-
-	//int sum;
-	//for (int i = 0; i < t; i++) {
-		//for (int j = 0; j < n-1; j++) {
-			//sum = wo[i][j] + wo[i][j + 1];
-			
-		//}
-
-	//}
-	//cout << sum;
-	
-	//for (int i =2; i < 99; i++) {
-		//if (sum / i) { cout << n << endl; 
-		//for (int p = 0; p < t; p++) {
-			///for (int j = 0; j < n; j++) {
-					//cout<< wo[p][j];
-				
-			//}
+	/*for (int i = 0; i < t; i++) {
+		n = sizeof(wo[i])/sizeof(int);
+		for (int j = 0; j < n; j++) {
+				cout << wo[i][j]<<" ";
+		}
+	}*/
 		
-		//}
-	//}
+
+	int sum;
+	for (int i = 0; i < t; i++) {
+		for (int j = 0; j < 200-1; j++) {
+			sum = wo[i][j] + wo[i][j + 1];
+			
+		}
+		if (sum % 2 == 0 or sum % 3 == 0 or sum % 5 == 0 or sum % 7 == 0) {
+			cout << sizeof(wo[i]) / sizeof(wo[i][0]) << endl;
+		}
+		else {
+			cout << "gegeg";
+		}
+	}
 
 
 	for (int i = 0; i < t; i++) {
