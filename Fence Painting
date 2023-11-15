@@ -1,0 +1,73 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    long long a, b, y, x, k ,A ,B;
+    cin>> a;
+    cin >> b;
+    cin >> x;
+    cin >> y;
+    k = a;
+    A = a * x;
+    B = b * y;
+    if (A == B) {
+        cout << a;
+    }
+    else if (x < y) {
+        if (A < B) {
+            while (B - A >x) {
+                A += y;
+                B -= y;
+                k++;
+            }
+            cout << k;
+        }
+        else if (A > B) {
+            while (A - B > x) {
+                A -= x;
+                B += x;
+                k--;
+            }
+            cout<< k;
+        }
+    }
+    else if (x > y) {
+        if (A > B) {
+            while (A - B > y) {
+                A -= x;
+                B += x;
+                k--;
+            }
+            cout << k;
+        }
+        else if (A < B) {
+            while (B - A > y) {
+                A += y;
+                B -= y;
+                k++;  
+            }
+            cout << k;
+        }
+       
+    }
+    else if (x == y) {
+        if (a > b) {
+            while (A - B > y) {
+                A -= x;
+                B += x;
+                k--;
+            }
+            cout << k;
+        }
+        else if (a < b) {
+            while (B - A > y) {
+                A += y;
+                B -= y;
+                k++;
+            }
+            cout << k;
+        }
+    }
+    
+}
